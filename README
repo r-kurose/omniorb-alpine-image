@@ -1,0 +1,8 @@
+alpine 用にビルドされた omniORB です。
+/opt/omniorb にビルド後のインストールプログラムが格納されています。
+/usr/local にコピーして使ってください。
+
+FROM kuroseaist/omniorb-alpine:4.2.3-3.10 as omniorb
+FROM alpine:3.10
+COPY --from=omniorb /opt/omniorb /usr/local
+...
